@@ -10,6 +10,15 @@ body {
 .row {
     margin: 0 !important;
 }
+
+a{
+    color: #e2e2e2 !important;
+}
+
+a:hover {
+    color: #ffffff !important;
+}
+
 .sidebar {
     height: 100vh;
     width: inherit;

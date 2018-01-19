@@ -10,9 +10,19 @@ angular.module("gpac",[])
 
     $scope.selectedSubjects = [];
 
-    DataFactory.getSubjects(1,1).then(function(response){
-        $scope.subjects = response.data.Y1.S1;
-    });
+    $scope.selectedYear = "Y1";
+    $scope.selectedSemester = "S1";
+
+    $scope.loadSubjects = function(){
+        $scope.selectedSubjects = [];
+        $scope.gpa = 0;
+
+        DataFactory.getSubjects($scope.selectedYear, $scope.selectedSemester).then(function(response){
+            $scope.subjects = response;
+        });
+    };
+
+    $scope.loadSubjects();
 
     DataFactory.getGrades().then(function(response){
         $scope.grades = response.data;
@@ -21,13 +31,26 @@ angular.module("gpac",[])
 
     $scope.addGrade = function(subject, grade){
 
+        if(!subject || !grade){
+            alert("Please select a subject and enter your grade!");
+            return;
+        }
+
         var gradeObject = {
             subject: subject,
             grade: grade
         };
 
         $scope.selectedSubjects.push(gradeObject);
-    }
+    };
+
+    $scope.removeGrade = function(object){
+        var index = $scope.selectedSubjects.indexOf(object);
+
+        if(index != -1){
+            $scope.selectedSubjects.splice(index, 1);
+        }
+    };
 
     $scope.calculateGPA = function(){
         var totalCreditPoints = 0;
@@ -38,8 +61,7 @@ angular.module("gpac",[])
         });
 
         $scope.gpa = gradeCreditProduct / totalCreditPoints;
-
-    }
+    };
 })
 
 .factory("DataFactory", function($http){
@@ -47,8 +69,8 @@ angular.module("gpac",[])
 
     sub.getSubjects = function(year,semester){
         return $http.get('app/data/subjects.json').then(function(data){
-            console.log(data);
-            return data;
+            console.log(data.data[year][semester]);
+            return data.data[year][semester];
         })
     };
 

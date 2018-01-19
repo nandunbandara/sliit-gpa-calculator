@@ -2,25 +2,61 @@
   "Y1":{
     "S1":{
       "EC143": {
+        "code": "EC143",
         "title": "Data Communications & Computer Networks I",
         "credits": 4
       },
       "IT100": {
+        "code": "IT100",
         "title": "Computer Fundamentals",
         "credits": 4
       },
       "MA140": {
+        "code": "MA140",
         "title": "Mathematics for Information Technology",
         "credits": 4
       },
       "IT101": {
+        "code": "IT101",
         "title": "Introduction to Programming Environments (C++/UNIX)",
         "credits": 5
       },
       "EL120": {
+        "code": "EL120",
         "title": "English Language Skills I",
         "credits": 4
       }
+    },
+    "S2": {
+      "IT102": {
+        "code": "IT10",
+        "title": "Software Technology I",
+        "credits": 4
+      }
+    }
+  },
+  "Y2":{
+    "S1":{
+
+    },
+    "S2":{
+
+    }
+  },
+  "Y3":{
+    "S1":{
+
+    },
+    "S2":{
+
+    }
+  },
+  "Y4":{
+    "S1":{
+
+    },
+    "S2":{
+
     }
   }
 }

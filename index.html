@@ -20,7 +20,9 @@
         <div class="col-md-4" style="padding-left: 0">
             <div class="sidebar">
                 <div class="icon-bar">
-                    <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                    <a href="https://github.com/ntbandara3/sliit-gpa-calculator" target="_blank">
+                        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                    </a>
                 </div>
                 <div class="text-box">
                     <h1 class="main-heading">
@@ -38,20 +40,26 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="year">Year</label>
-                                <select class="form-control form-control-sm" id="year">
-                                    <option>1st Year</option>
-                                    <option>2nd Year</option>
-                                    <option>3rd Year</option>
-                                    <option>4th Year</option>
+                                <select
+                                        ng-model="selectedYear"
+                                        ng-change="loadSubjects()"
+                                        class="form-control form-control-sm" id="year">
+                                    <option value="Y1">1st Year</option>
+                                    <option value="Y2">2nd Year</option>
+                                    <option value="Y3">3rd Year</option>
+                                    <option value="Y4">4th Year</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="semester">Semester</label>
-                                <select class="form-control form-control-sm" id="semester">
-                                    <option>1st Semester</option>
-                                    <option>2nd Semester</option>
+                                <select
+                                        ng-model="selectedSemester"
+                                        ng-change="loadSubjects()"
+                                        class="form-control form-control-sm" id="semester">
+                                    <option value="S1">1st Semester</option>
+                                    <option value="S2">2nd Semester</option>
                                 </select>
                             </div>
                         </div>
@@ -110,7 +118,7 @@
                             <td>{{item.subject.credits}}</td>
                             <td>{{item.grade.grade}}</td>
                             <td>
-                                <button class="btn-sm btn-danger">X</button>
+                                <button class="btn-sm btn-danger" ng-click="removeGrade(item)">X</button>
                             </td>
                         </tr>
                         </tbody>
