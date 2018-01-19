@@ -29,8 +29,28 @@
     },
     "S2": {
       "IT102": {
-        "code": "IT10",
+        "code": "IT102",
         "title": "Software Technology I",
+        "credits": 4
+      },
+      "IT103": {
+        "code": "IT103",
+        "title": "Database Mgmt. Systems I",
+        "credits": 4
+      },
+      "MA141": {
+        "code": "MA141",
+        "title": "Foundations of Computer Science",
+        "credits": 4
+      },
+      "IT104": {
+        "code": "IT104",
+        "title": "Internet Technology and Applications",
+        "credits": 4
+      },
+      "EL121": {
+        "code": "EL121",
+        "title": "English Language Skills II",
         "credits": 4
       }
     }
