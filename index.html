@@ -5,13 +5,123 @@
     <title>SLIIT GPA Calculator</title>
 
     <script src="vendor/angular.min.js"></script>
+    <!--<script src="vendor/bootstrap.js"></script>-->
     <script src="app/app.js"></script>
 
-    <link ref="stylesheet" href="styles/"
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="vendor/css/font-awesome.min.css" rel="stylesheet">
+
 </head>
 <body ng-app="gpac">
-    <div ng-controller="mainCtrl">
+    <div class="row">
+        <div class="col-md-4" style="padding-left: 0">
+            <div class="sidebar">
+                <div class="icon-bar">
+                    <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="text-box">
+                    <h1 class="main-heading">
+                        <span class="text-GPA">GPA</span>
+                        <span class="text-calc">Calculator</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6" ng-controller="mainCtrl">
+            <div class="form-container">
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="year">Year</label>
+                                <select class="form-control form-control-sm" id="year">
+                                    <option>1st Year</option>
+                                    <option>2nd Year</option>
+                                    <option>3rd Year</option>
+                                    <option>4th Year</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="semester">Semester</label>
+                                <select class="form-control form-control-sm" id="semester">
+                                    <option>1st Semester</option>
+                                    <option>2nd Semester</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select
+                                        ng-model="selectedSubject"
+                                        ng-options="item as item.title for item in subjects"
+                                        class="form-control form-control-sm" id="subject">
+                                    <!--<option>1st Year</option>-->
+                                    <!--<option>2nd Year</option>-->
+                                    <!--<option>3rd Year</option>-->
+                                    <!--<option>4th Year</option>-->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="grade">Grade</label>
+                            <select
+                                    ng-model="selectedGrade"
+                                    ng-options="item as item.grade for item in grades"
+                                    class="form-control form-control-sm" id="grade">
+                                <option>1st Year</option>
+                                <option>2nd Year</option>
+                                <option>3rd Year</option>
+                                <option>4th Year</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-primary btn-lg" style="float: right"
+                                    ng-click="addGrade(selectedSubject, selectedGrade)">Add Grade</button>
+                        </div>
+                    </div>
+                </form>
 
+                <div class="grades-table-container">
+                    <table class="table">
+                        <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Code</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Credits</th>
+                            <th scope="col">Grade</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in selectedSubjects">
+                            <td>{{item.subject.code}}</td>
+                            <td>{{item.subject.title}}</td>
+                            <td>{{item.subject.credits}}</td>
+                            <td>{{item.grade.grade}}</td>
+                            <td>
+                                <button class="btn-sm btn-danger">X</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="result-container">
+                    <h2>GPA: </h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
     </div>
 </body>
 </html>

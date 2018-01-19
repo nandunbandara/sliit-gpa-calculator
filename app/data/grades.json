@@ -1,14 +1,14 @@
 {
-  "A+"  : 4.00,
-  "A"   : 4.00,
-  "A-"  : 3.70,
-  "B+"  : 3.30,
-  "B"   : 3.00,
-  "B-"  : 2.70,
-  "C+"  : 2.30,
-  "C"   : 2.00,
-  "C-"  : 1.70,
-  "D+"  : 1.30,
-  "D"   : 1.00,
-  "E"   : 0.00
+  "A+"  : { "grade": "A+", "points":4.00},
+  "A"   : { "grade": "A", "points":4.00},
+  "A-"  : { "grade": "A-", "points":3.70},
+  "B+"  : { "grade": "B+", "points":3.30},
+  "B"  : { "grade": "B", "points":3.00},
+  "B-"  : { "grade": "B-", "points":2.70},
+  "C+"  : { "grade": "C+", "points":2.30},
+  "C"  : { "grade": "C", "points":2.00},
+  "C-"  : { "grade": "C-", "points":1.70},
+  "D+"  : { "grade": "D+", "points":1.30},
+  "D"  : { "grade": "D", "points":1.00},
+  "E"  : { "grade": "E", "points":0.00}
 }

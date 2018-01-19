@@ -2,3 +2,61 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.row {
+    margin: 0 !important;
+}
+.sidebar {
+    height: 100vh;
+    width: inherit;
+    background-color: #00897B;
+    clip-path: polygon(0 0, 10% 0, 30% 100%, 0 100% );
+    position: fixed;
+}
+
+.icon-bar {
+    padding: 20px;
+    color: #ffffff;
+}
+
+.text-box {
+    padding: 20px;
+    position: fixed;
+    bottom: -18%;
+    transform: translateY(-50%);
+}
+
+.main-heading {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.text-GPA {
+    font-size: 120px;
+    display: block;
+}
+
+.text-calc {
+    font-size: 40px;
+    display: block;
+}
+
+.form-container {
+    padding: 20px;
+}
+
+.grades-table-container {
+    margin-top: 20px;
+}
+
+.result-container {
+    margin-top: 20px;
+    font-size: large;
+    font-weight: 700;
+}
