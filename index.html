@@ -86,7 +86,7 @@
                             </select>
                         </div>
                         <div class="col">
-                            <button type="button" class="btn btn-primary btn-lg" style="float: right"
+                            <button type="button" class="btn btn-primary btn-sm" style="float: right"
                                     ng-click="addGrade(selectedSubject, selectedGrade)">Add Grade</button>
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                     </table>
                 </div>
                 <div class="result-container">
-                    <h2>GPA: </h2>
+                    <button class="btn-sm btn-danger" ng-click="calculateGPA()">Calculate GPA</button><br><br><h2>GPA: {{gpa | number : 2}}</h2>
                 </div>
             </div>
         </div>

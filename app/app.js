@@ -6,6 +6,8 @@ angular.module("gpac",[])
 .controller("mainCtrl", function($scope, DataFactory){
     $scope.testMessage = "hello";
 
+    $scope.gpa = 0;
+
     $scope.selectedSubjects = [];
 
     DataFactory.getSubjects(1,1).then(function(response){
@@ -25,6 +27,18 @@ angular.module("gpac",[])
         };
 
         $scope.selectedSubjects.push(gradeObject);
+    }
+
+    $scope.calculateGPA = function(){
+        var totalCreditPoints = 0;
+        var gradeCreditProduct = 0;
+        $scope.selectedSubjects.forEach(function(item){
+            gradeCreditProduct += item.subject.credits * item.grade.points;
+            totalCreditPoints += item.subject.credits;
+        });
+
+        $scope.gpa = gradeCreditProduct / totalCreditPoints;
+
     }
 })
 
